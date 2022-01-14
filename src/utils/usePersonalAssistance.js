@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import textProcessing from "./textProcessing";
 
 const STATUS_VALUE = {
   START: "START",
@@ -6,12 +7,8 @@ const STATUS_VALUE = {
   STOP: "STOP",
 };
 
-function process(text) {
-  return `I found some information for "${text}"`;
-}
-
 function usePersonalAssistance() {
-  const [status, setStatus] = useState(STATUS_VALUE.IDLE);
+  const [status, setStatus] = useState("");
   const [text, setText] = useState({ raw: "", result: "" });
   const recognitionRef = useRef(null);
 
@@ -39,10 +36,8 @@ function usePersonalAssistance() {
         if (res.isFinal) {
           setStatus(STATUS_VALUE.PROCESSESING);
 
-          const response = process(text);
+          const response = textProcessing(text);
           setText({ raw: text, result: response });
-
-          // speechSynthesis.speak(new SpeechSynthesisUtterance(response));
         }
       };
     }
