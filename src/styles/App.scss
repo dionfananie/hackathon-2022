@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -9,10 +9,9 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
 
 .App {
   text-align: center;
@@ -23,9 +22,8 @@ code {
   pointer-events: none;
 }
 
-
 .container {
-  background-image: url('../assets/image.png');
+  background-image: url("../assets/image.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
@@ -35,8 +33,9 @@ code {
   display: block;
   margin: auto;
 }
-.navBottom{
-  background-image: url('../assets/nav-bottom.png');
+
+.navBottom {
+  background-image: url("../assets/nav-bottom.png");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -48,4 +47,12 @@ code {
   right: 0;
   max-width: 500px;
   margin: auto;
+}
+
+.container-pulsa {
+  background-image: url("../assets/image\ \(3\).png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
 }

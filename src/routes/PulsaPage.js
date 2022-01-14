@@ -1,5 +1,14 @@
+import { useEffect } from "react";
+import usePersonalAssistance from "../utils/usePersonalAssistance";
+
 const PulsaPage = () => {
-  return <div>pulsa page</div>;
+  const { speakToUser } = usePersonalAssistance();
+
+  useEffect(() => {
+    speakToUser("Kita ada beberapa pilihan nominal, mau pilih yang mana?");
+  }, [speakToUser]);
+
+  return <div className="container-pulsa" />;
 };
 
 export default PulsaPage;

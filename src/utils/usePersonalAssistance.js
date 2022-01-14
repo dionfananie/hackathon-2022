@@ -38,14 +38,6 @@ function usePersonalAssistance() {
         if (res.isFinal) {
           setStatus(STATUS_VALUE.DONE_LISTENING);
 
-          // ===========
-          // const txtToSpeach = new SpeechSynthesisUtterance(
-          //   "kita hanya memiliki pulsa yang 20 ribu 25 ribu dan 30 ribu"
-          // );
-          // txtToSpeach.lang = "id";
-          // speechSynthesis.speak(txtToSpeach);
-          // ==========
-
           const response = textProcessing(text);
           setText({ raw: text, result: response });
         }
@@ -68,9 +60,11 @@ function usePersonalAssistance() {
     }
   };
 
-  console.log(status);
+  const speakToUser = (text) => {
+    alert(text);
+  };
 
-  return { status, text, toggleAudio };
+  return { status, text, toggleAudio, speakToUser };
 }
 
 export default usePersonalAssistance;
