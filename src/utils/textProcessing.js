@@ -22,26 +22,28 @@ const textProcessing = (string) => {
 	}
 
 	if (window.location.pathname === '/checkout') {
-		const yes = new RegExp(/(.*yes.*)|(.*boleh.*)/ig);
+		const yes = new RegExp(/(.*yes.*)|(.*boleh.*)|(.*ya.*)/ig);
 
 		if (yes.test(string)) window.location.assign('/payment')
 		return
 	}
 
-	if (window.location.pathname === '/checkout') {
-		const no = new RegExp(/(.*tidak.*)|(.*nanti deh.*)|(.*jangan dulu.*)/ig);
+	if (window.location.pathname === '/payment') {
+		const no = new RegExp(/(.*tidak.*)|(.*nanti deh.*)|(.*jangan dulu.*)|(.*engga*)|(.*enggak*)/ig);
 
 		if (no.test(string)) {
 			const synth = window.speechSynthesis;
-			const utterThis = new SpeechSynthesisUtterance('Baik, kita akan menyiapkan pembayaran kamu, sebentar yaaa...');
+			const utterThis = new SpeechSynthesisUtterance('Baik, kita akan menyiapkan pembayaran kamu, sebentar ya');
 			utterThis.lang = "id";
 
 			synth.speak(utterThis);
-
-			setTimeout(() => {
-				window.location.assign('/thank-you')
-			}, 2000);
+			utterThis.onend = () => {
+				setTimeout(() => {
+					window.location.assign('/thank-you')
+				}, 2000);
+			}
 		}
+
 		return
 	}
 
