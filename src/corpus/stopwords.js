@@ -17,7 +17,8 @@ const stopwords = [
 	'dulu',
 	'ke',
 	'pake',
-	'pakai'
+	'pakai',
+	'lagi'
 ];
 
 export default stopwords;
