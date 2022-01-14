@@ -38,8 +38,16 @@ function usePersonalAssistance() {
         if (res.isFinal) {
           setStatus(STATUS_VALUE.DONE_LISTENING);
 
-          const response = textProcessing(text);
-          setText({ raw: text, result: response });
+          // ===========
+          const txtToSpeach = new SpeechSynthesisUtterance(
+            "kita hanya memiliki pulsa yang 20 ribu 25 ribu dan 30 ribu"
+          );
+          txtToSpeach.lang = "id";
+          speechSynthesis.speak(txtToSpeach);
+          // ==========
+
+          // const response = textProcessing(text);
+          setText({ raw: text, result: "" });
         }
       };
     }
@@ -50,7 +58,7 @@ function usePersonalAssistance() {
   }, []);
 
   const toggleAudio = () => {
-    if (status === STATUS_VALUE.PROCESSESING || status === STATUS_VALUE.START) {
+    if (![STATUS_VALUE.STOP, ""].includes(status)) {
       recognitionRef.current.stop();
       setStatus(STATUS_VALUE.STOP);
       setText({ raw: "", result: "" });
