@@ -3,7 +3,8 @@ import textProcessing from "./textProcessing";
 
 const STATUS_VALUE = {
   START: "START",
-  PROCESSESING: "PROCESSESING",
+  LISTENING: "LISTENING",
+  DONE_LISTENING: "DONE_LISTENING",
   STOP: "STOP",
 };
 
@@ -24,23 +25,28 @@ function usePersonalAssistance() {
       recognition.continuous = true;
       recognition.interimResults = true;
       recognition.lang = "id";
-      recognition.muted = true;
 
       recognitionRef.current = recognition;
 
       recognition.onresult = (event) => {
+        setStatus(STATUS_VALUE.LISTENING);
+
         const last = event.results.length - 1;
         const res = event.results[last];
         const text = res[0].transcript;
 
         if (res.isFinal) {
-          setStatus(STATUS_VALUE.PROCESSESING);
+          setStatus(STATUS_VALUE.DONE_LISTENING);
 
           const response = textProcessing(text);
           setText({ raw: text, result: response });
         }
       };
     }
+
+    return () => {
+      if (recognitionRef.current) recognitionRef.current.stop();
+    };
   }, []);
 
   const toggleAudio = () => {
@@ -53,6 +59,8 @@ function usePersonalAssistance() {
       setStatus(STATUS_VALUE.START);
     }
   };
+
+  console.log(status);
 
   return { status, text, toggleAudio };
 }
