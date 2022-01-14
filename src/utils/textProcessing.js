@@ -1,4 +1,5 @@
 import removeStopwords from "./removeStopwords";
+import selectAmount from "./selectAmount";
 
 const regexBPJS = new RegExp(/(.*bayar bpjs.*|.*tagihan bpjs.*)/ig);
 const regexPLN = new RegExp(/(.*tagihan listrik.*|.*token listrik.*|.*pln.*)/ig);
@@ -15,6 +16,11 @@ const regexWishlist = new RegExp(/(.*wishlist.*)/ig);
 const regexPromo = new RegExp(/(.*promo.*)/ig);
 
 const textProcessing = (string) => {
+	if (window.location.pathname === '/pulsa-page') {
+		selectAmount(string)
+		return
+	}
+
 	if (regexBPJS.test(string)) {
 		window.location.assign('https://www.tokopedia.com/tagihan/bpjs-kesehatan/');
 	} else if (regexPLN.test(string)) {

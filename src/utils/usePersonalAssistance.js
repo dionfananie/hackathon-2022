@@ -24,7 +24,10 @@ function usePersonalAssistance() {
     utterThis.text = text;
 
     window.speechSynthesis.speak(utterThis);
-    utterThis.onend = callback;
+    utterThis.onend = () => {
+      window.speechSynthesis.cancel();
+      callback();
+    };
   };
 
   useEffect(() => {

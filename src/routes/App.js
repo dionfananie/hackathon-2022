@@ -17,6 +17,7 @@ function HomePage() {
     return () => {
       stopPA();
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
