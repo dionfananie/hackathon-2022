@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: gainsboro;
 }
 
 code {
@@ -24,20 +25,27 @@ code {
 
 
 .container {
- background-image: url('../assets/image.png');
- background-repeat: no-repeat;
- background-size: cover;
- width: 100vw;
- height: 100vh;
-
+  background-image: url('../assets/image.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  max-width: 500px;
+  height: 100vh;
+  display: block;
+  margin: auto;
 }
 .navBottom{
   background-image: url('../assets/nav-bottom.png');
- background-repeat: no-repeat;
- background-size: cover;
- width: 100%;
- height: 52px;
- position: fixed;
- z-index: 1;
- bottom: 0
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 52px;
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-width: 500px;
+  margin: auto;
 }
