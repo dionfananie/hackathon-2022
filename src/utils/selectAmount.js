@@ -11,10 +11,8 @@ const selectAmount = (string) => {
   }
 
   const synth = window.speechSynthesis;
-
   const utterThis = new SpeechSynthesisUtterance(defaultText);
   utterThis.lang = "id";
-  console.log('eoel', utterThis);
 
   synth.speak(utterThis);
 };

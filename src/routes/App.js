@@ -8,6 +8,8 @@ import usePersonalAssistance from "../utils/usePersonalAssistance";
 
 import PulsaPage from "./PulsaPage";
 import ThankYou from "./ThankYou";
+import CheckoutPage from "./CheckoutPage";
+import PaymentPage from "./PaymentPage";
 
 function HomePage() {
   const { startPA, stopPA, status } = usePersonalAssistance();
@@ -44,6 +46,8 @@ function App() {
         <Route path="/" component={HomePage} exact />
         <Route path="/pulsa-page" component={PulsaPage} />
         <Route path="/thank-you" component={ThankYou} />
+        <Route path="/checkout" component={CheckoutPage} />
+        <Route path="/payment" component={PaymentPage} />
       </Switch>
     </BrowserRouter>
   );

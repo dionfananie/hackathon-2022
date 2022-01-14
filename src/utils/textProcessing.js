@@ -21,6 +21,30 @@ const textProcessing = (string) => {
 		return
 	}
 
+	if (window.location.pathname === '/checkout') {
+		const yes = new RegExp(/(.*yes.*)|(.*boleh.*)/ig);
+
+		if (yes.test(string)) window.location.assign('/payment')
+		return
+	}
+
+	if (window.location.pathname === '/checkout') {
+		const no = new RegExp(/(.*tidak.*)|(.*nanti deh.*)|(.*jangan dulu.*)/ig);
+
+		if (no.test(string)) {
+			const synth = window.speechSynthesis;
+			const utterThis = new SpeechSynthesisUtterance('Baik, kita akan menyiapkan pembayaran kamu, sebentar yaaa...');
+			utterThis.lang = "id";
+
+			synth.speak(utterThis);
+
+			setTimeout(() => {
+				window.location.assign('/thank-you')
+			}, 2000);
+		}
+		return
+	}
+
 	if (regexBPJS.test(string)) {
 		window.location.assign('https://www.tokopedia.com/tagihan/bpjs-kesehatan/');
 	} else if (regexPLN.test(string)) {

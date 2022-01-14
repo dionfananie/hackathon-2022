@@ -57,9 +57,24 @@ code {
   height: 100vh;
 }
 
-
 .thank-you{
   background-image: url("../assets/thank-you.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container-checkout {
+  background-image: url("../assets/image\ \(4\).png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container-payment {
+  background-image: url("../assets/image\ \(5\).png");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100vw;
