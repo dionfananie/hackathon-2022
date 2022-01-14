@@ -12,6 +12,7 @@ function usePersonalAssistance() {
   const [status, setStatus] = useState("");
   const [text, setText] = useState({ raw: "", result: "" });
   const recognitionRef = useRef(null);
+  const synth = window.speechSynthesis;
 
   useEffect(() => {
     const SpeechRecognition =
@@ -61,7 +62,10 @@ function usePersonalAssistance() {
   };
 
   const speakToUser = (text) => {
-    alert(text);
+    const utterThis = new SpeechSynthesisUtterance(text);
+    utterThis.lang = "id";
+
+    synth.speak(utterThis);
   };
 
   return { status, text, toggleAudio, speakToUser };
