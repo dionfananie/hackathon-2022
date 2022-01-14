@@ -1,8 +1,8 @@
 import removeStopwords from "./removeStopwords";
 
 const regexBPJS = new RegExp(/(.*bayar bpjs.*|.*tagihan bpjs.*)/ig);
-const regexPLN = new RegExp(/(.*tagihan listrik.*|.*token listrik.*|.*pln.*|.*pulsa listrik.*)/ig);
-const regexPulsa = new RegExp(/(.*beli pulsa.*|.*pulsa telkomsel.*|.*pulsa xl.*|.*pulsa indosat.*|.*pulsa simpati.*)/ig);
+const regexPLN = new RegExp(/(.*tagihan listrik.*|.*token listrik.*|.*pln.*)/ig);
+const regexPulsa = new RegExp(/(.*pulsa*.)/ig);
 const regexPaketData = new RegExp(/(.*paket data.*)/ig);
 const regexFlightSchedule = new RegExp(/(.*tiket pesawat.*)|(.*tiket garuda.*)|(.*air asia.*)|(.*lion air.*)|(.*citilink.*)/ig);
 const regexTrainSchedule = new RegExp(/(.*tiket kereta.*)|(.*tiket kai.*)|(.*naik kereta.*)|(.*kereta api.*)|(.*taksaka.*)|(.*argolawu.*)|(.*malabar.*)|(.*argodwipangga.*)/ig);
