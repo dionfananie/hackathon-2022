@@ -1,0 +1,25 @@
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .search{
+    width: 200px;
+  }
+  .location{
+    padding: 8px 0;
+    display: flex;
+    p{
+      margin-left: 8px;
+      margin: 0;
+      margin-left: 8px;
+      font-size: 12px;
+    }
+  }
+  
+  .payment{
+    position: relative;
+    width: 100%;
+    margin-top: 20px
+  }

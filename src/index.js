@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './routes/index.css';
 import App from './routes/App';
 import reportWebVitals from './reportWebVitals';
-import '@material/mwc-icon';
 ReactDOM.render(
   <React.StrictMode>
     <App />
