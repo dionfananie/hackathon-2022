@@ -1,5 +1,4 @@
 import "../styles/App.scss";
-import Header from "../components/Header";
 
 import usePersonalAssistance from "../utils/usePersonalAssistance";
 
@@ -9,9 +8,12 @@ function App() {
   console.log(JSON.stringify(dsa.text, null, 2), dsa.status);
 
   return (
+    <div>
+
     <div className="container">
-      <Header />
       <button onClick={dsa.toggleAudio}>sip</button>
+    </div>
+      <div className='navBottom'></div>
     </div>
   );
 }

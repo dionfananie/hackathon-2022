@@ -1,6 +1,12 @@
 import React from 'react';
+import { WiredIconButton } from 'wired-elements/lib/wired-icon-button';
+
+
 const HighlightMenu = () => {
-    return ( <div></div> );
+    return (
+    <div className='highlight'>
+
+    </div> );
 }
  
 export default HighlightMenu;

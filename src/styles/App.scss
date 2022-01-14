@@ -24,5 +24,20 @@ code {
 
 
 .container {
- padding: 20px
+ background-image: url('../assets/image.png');
+ background-repeat: no-repeat;
+ background-size: cover;
+ width: 100vw;
+ height: 100vh;
+
+}
+.navBottom{
+  background-image: url('../assets/nav-bottom.png');
+ background-repeat: no-repeat;
+ background-size: cover;
+ width: 100%;
+ height: 52px;
+ position: fixed;
+ z-index: 1;
+ bottom: 0
 }
