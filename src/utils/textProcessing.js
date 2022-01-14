@@ -1,3 +1,5 @@
+import removeStopwords from "./removeStopwords";
+
 const regexBPJS = new RegExp(/(.*bayar bpjs.*|.*tagihan bpjs.*)/ig);
 const regexPLN = new RegExp(/(.*tagihan listrik.*|.*token listrik.*|.*pln.*|.*pulsa listrik.*)/ig);
 const regexPulsa = new RegExp(/(.*beli pulsa.*|.*pulsa telkomsel.*|.*pulsa xl.*|.*pulsa indosat.*|.*pulsa simpati.*)/ig);
@@ -31,8 +33,9 @@ const textProcessing = (string) => {
 	} else if (regexVoucherGame.test(string)) {
     window.location.assign('https://www.tokopedia.com/voucher-game/');
   } else {
+		const sanitizedText = removeStopwords(string);
     // if input doesn't recognize, default state will redirect user to search page
-    window.location.assign(`https://www.tokopedia.com/search?st=product&q=${string}`);
+		window.location.assign(`https://www.tokopedia.com/search?st=product&q=${sanitizedText}`);
   }
 };
 
