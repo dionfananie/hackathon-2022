@@ -57,11 +57,9 @@ const textProcessing = (string) => {
 
 		synth.speak(utterThis);
 		utterThis.onend = () => {
-			utterThis.onend = () => {
-				setTimeout(() => {
-					window.location.assign('/thank-you')
-				}, 2000);
-			}
+			setTimeout(() => {
+				window.location.assign('/thank-you')
+			}, 2000);
 		}
 
 		return
