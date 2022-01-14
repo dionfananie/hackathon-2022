@@ -30,6 +30,7 @@ const textProcessing = (string) => {
 
 	if (window.location.pathname === '/payment') {
 		const no = new RegExp(/(.*tidak.*)|(.*nanti deh.*)|(.*jangan dulu.*)|(.*engga*)|(.*enggak*)/ig);
+		const yes = new RegExp(/(.*yes.*)|(.*boleh.*)|(.*ya.*)/ig);
 
 		if (no.test(string)) {
 			const synth = window.speechSynthesis;
@@ -37,6 +38,25 @@ const textProcessing = (string) => {
 			utterThis.lang = "id";
 
 			synth.speak(utterThis);
+			utterThis.onend = () => {
+				setTimeout(() => {
+					window.location.assign('/thank-you')
+				}, 2000);
+			}
+		}
+
+		if (yes.test(string)) window.location.assign('/choose-payment')
+
+		return
+	}
+
+	if (window.location.pathname === '/choose-payment') {
+		const synth = window.speechSynthesis;
+		const utterThis = new SpeechSynthesisUtterance(`Pembayaran dengan metode ${string}, akan kita teruskan, sebentar ya`);
+		utterThis.lang = "id";
+
+		synth.speak(utterThis);
+		utterThis.onend = () => {
 			utterThis.onend = () => {
 				setTimeout(() => {
 					window.location.assign('/thank-you')

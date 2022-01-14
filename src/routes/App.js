@@ -10,6 +10,7 @@ import PulsaPage from "./PulsaPage";
 import ThankYou from "./ThankYou";
 import CheckoutPage from "./CheckoutPage";
 import PaymentPage from "./PaymentPage";
+import ChoosePaymentPage from "./ChoosePaymentPage";
 
 function HomePage() {
   const { startPA, stopPA, status } = usePersonalAssistance();
@@ -48,6 +49,7 @@ function App() {
         <Route path="/thank-you" component={ThankYou} />
         <Route path="/checkout" component={CheckoutPage} />
         <Route path="/payment" component={PaymentPage} />
+        <Route path="/choose-payment" component={ChoosePaymentPage} />
       </Switch>
     </BrowserRouter>
   );

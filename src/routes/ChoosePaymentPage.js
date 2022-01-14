@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import usePersonalAssistance from "../utils/usePersonalAssistance";
 
-const CheckoutPage = () => {
+const PulsaPage = () => {
   const { speakToUser, startPA, stopPA } = usePersonalAssistance();
 
   useEffect(() => {
     speakToUser(
-      "Saat ini, kamu menggunakan pembayaran 'GoPay', apakah kamu ingin mengganti metode pembayaran lainnya?",
+      "Kamu mau bayar pakai apa? Gopay Later, OVO Saldo Toko Pedia, BRI, One Klik, dan Mandir",
       startPA
     );
 
@@ -16,7 +16,7 @@ const CheckoutPage = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <div className="container-payment" />;
+  return <div className="container-choose-payment" />;
 };
 
-export default CheckoutPage;
+export default PulsaPage;
