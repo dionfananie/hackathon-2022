@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import usePersonalAssistance from "../utils/usePersonalAssistance";
-// import selectAmount from "../utils/selectAmount";
+import selectAmount from "../utils/selectAmount";
 
 const PulsaPage = () => {
   const { speakToUser } = usePersonalAssistance();
@@ -9,6 +9,7 @@ const PulsaPage = () => {
     speakToUser(
       "Kita ada beberapa pilihan nominal, 15 ribu, 25 ribu, 30 ribu, 40 ribu, 50 ribu dan 75 ribu?"
     );
+    selectAmount('90.000');
   }, [speakToUser]);
 
   return <div className="container-pulsa" />;

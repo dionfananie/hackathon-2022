@@ -24,15 +24,13 @@ function usePersonalAssistance() {
     setStatus(STATUS_VALUE.START);
   };
 
-  const speakToUser = (text) => {
+  const speakToUser = (text, callback) => {
     const utterThis = new SpeechSynthesisUtterance();
     utterThis.lang = "id";
     utterThis.text = text;
 
     window.speechSynthesis.speak(utterThis);
-    utterThis.onend = () => {
-      alert("trigger alert pas selesai ngomong");
-    };
+    utterThis.onend = callback;
   };
 
   useEffect(() => {
