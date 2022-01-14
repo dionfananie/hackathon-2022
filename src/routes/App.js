@@ -1,4 +1,5 @@
 import { Route, BrowserRouter, Switch } from "react-router-dom";
+import MicBtn from "../components/MicBtn";
 import "../styles/App.scss";
 
 import usePersonalAssistance from "../utils/usePersonalAssistance";
@@ -16,7 +17,7 @@ function App() {
         <Route path="/" exact>
           <div>
             <div className="container">
-              <button onClick={dsa.toggleAudio}>sip</button>
+              <MicBtn onClick={dsa.toggleAudio} />
             </div>
             <div className="navBottom"></div>
           </div>
