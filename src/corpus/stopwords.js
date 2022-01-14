@@ -18,7 +18,10 @@ const stopwords = [
 	'ke',
 	'pake',
 	'pakai',
-	'lagi'
+	'lagi',
+	'toped',
+	'tokopedia',
+	'tidak',
 ];
 
 export default stopwords;
