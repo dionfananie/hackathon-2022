@@ -7,7 +7,7 @@ const PulsaPage = () => {
 
   useEffect(() => {
     speakToUser(
-      "Kita ada beberapa pilihan nominal, 15 ribu, 25 ribu, 30 ribu, 40 ribu, 50 ribu dan 70 ribu?"
+      "Kita ada beberapa pilihan nominal, 15 ribu, 25 ribu, 30 ribu, 40 ribu, 50 ribu dan 75 ribu?"
     );
   }, [speakToUser]);
 

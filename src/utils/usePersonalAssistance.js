@@ -12,7 +12,28 @@ function usePersonalAssistance() {
   const [status, setStatus] = useState("");
   const [text, setText] = useState({ raw: "", result: "" });
   const recognitionRef = useRef(null);
-  const synth = window.speechSynthesis;
+
+  const stopPA = () => {
+    recognitionRef.current.stop();
+    setStatus(STATUS_VALUE.STOP);
+    setText({ raw: "", result: "" });
+  };
+
+  const startPA = () => {
+    recognitionRef.current.start();
+    setStatus(STATUS_VALUE.START);
+  };
+
+  const speakToUser = (text) => {
+    const utterThis = new SpeechSynthesisUtterance();
+    utterThis.lang = "id";
+    utterThis.text = text;
+
+    window.speechSynthesis.speak(utterThis);
+    utterThis.onend = () => {
+      alert("trigger alert pas selesai ngomong");
+    };
+  };
 
   useEffect(() => {
     const SpeechRecognition =
@@ -46,29 +67,13 @@ function usePersonalAssistance() {
     }
 
     return () => {
-      if (recognitionRef.current) recognitionRef.current.stop();
+      if (recognitionRef.current) stopPA();
     };
   }, []);
 
-  const toggleAudio = () => {
-    if (![STATUS_VALUE.STOP, ""].includes(status)) {
-      recognitionRef.current.stop();
-      setStatus(STATUS_VALUE.STOP);
-      setText({ raw: "", result: "" });
-    } else {
-      recognitionRef.current.start();
-      setStatus(STATUS_VALUE.START);
-    }
-  };
+  console.log(status);
 
-  const speakToUser = (text) => {
-    const utterThis = new SpeechSynthesisUtterance(text);
-    utterThis.lang = "id";
-
-    synth.speak(utterThis);
-  };
-
-  return { status, text, toggleAudio, speakToUser };
+  return { status, text, startPA, speakToUser, stopPA };
 }
 
 export default usePersonalAssistance;

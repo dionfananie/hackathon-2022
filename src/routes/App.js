@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Route, BrowserRouter, Switch } from "react-router-dom";
 import MicBtn from "../components/MicBtn";
 import "../styles/App.scss";
@@ -7,15 +8,19 @@ import usePersonalAssistance from "../utils/usePersonalAssistance";
 import PulsaPage from "./PulsaPage";
 
 function HomePage() {
-  const dsa = usePersonalAssistance();
+  const { startPA, stopPA } = usePersonalAssistance();
 
-  console.log(JSON.stringify(dsa.text, null, 2), dsa.status);
+  useEffect(() => {
+    return () => {
+      stopPA();
+    };
+  }, []);
 
   return (
     <div>
       <div>
         <div className="container">
-          <MicBtn onClick={dsa.toggleAudio} />
+          <MicBtn onClick={startPA} />
         </div>
         <div className="navBottom"></div>
       </div>
