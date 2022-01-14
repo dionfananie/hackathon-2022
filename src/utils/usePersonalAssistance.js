@@ -39,15 +39,15 @@ function usePersonalAssistance() {
           setStatus(STATUS_VALUE.DONE_LISTENING);
 
           // ===========
-          const txtToSpeach = new SpeechSynthesisUtterance(
-            "kita hanya memiliki pulsa yang 20 ribu 25 ribu dan 30 ribu"
-          );
-          txtToSpeach.lang = "id";
-          speechSynthesis.speak(txtToSpeach);
+          // const txtToSpeach = new SpeechSynthesisUtterance(
+          //   "kita hanya memiliki pulsa yang 20 ribu 25 ribu dan 30 ribu"
+          // );
+          // txtToSpeach.lang = "id";
+          // speechSynthesis.speak(txtToSpeach);
           // ==========
 
-          // const response = textProcessing(text);
-          setText({ raw: text, result: "" });
+          const response = textProcessing(text);
+          setText({ raw: text, result: response });
         }
       };
     }
