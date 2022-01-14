@@ -1,12 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import textProcessing from "./textProcessing";
-
-const STATUS_VALUE = {
-  START: "START",
-  LISTENING: "LISTENING",
-  DONE_LISTENING: "DONE_LISTENING",
-  STOP: "STOP",
-};
+import { STATUS_VALUE } from "../constants";
 
 function usePersonalAssistance() {
   const [status, setStatus] = useState("");
