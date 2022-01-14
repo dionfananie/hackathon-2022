@@ -7,6 +7,7 @@ import "../styles/App.scss";
 import usePersonalAssistance from "../utils/usePersonalAssistance";
 
 import PulsaPage from "./PulsaPage";
+import ThankYou from "./ThankYou";
 
 function HomePage() {
   const { startPA, stopPA, status } = usePersonalAssistance();
@@ -42,6 +43,7 @@ function App() {
       <Switch>
         <Route path="/" component={HomePage} exact />
         <Route path="/pulsa-page" component={PulsaPage} />
+        <Route path="/thank-you" component={ThankYou} />
       </Switch>
     </BrowserRouter>
   );
