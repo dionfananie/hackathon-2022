@@ -17,7 +17,7 @@ const textProcessing = (string) => {
 	} else if (regexPLN.test(string)) {
 		window.location.assign('https://www.tokopedia.com/pln/');
 	} else if (regexPulsa.test(string)) {
-    window.location.assign('https://www.tokopedia.com/pulsa/');
+    window.location.assign('/pulsa-page'); // redirect to our internal route
 	} else if (regexPaketData.test(string)) {
     window.location.assign('https://www.tokopedia.com/paket-data/');
 	} else if (regexFlightSchedule.test(string)) {
