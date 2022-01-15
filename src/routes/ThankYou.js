@@ -5,7 +5,7 @@ const ThankYou = () => {
   const { speakToUser, stopPA } = usePersonalAssistance();
 
   useEffect(() => {
-    speakToUser("Terima Kasih, sudah berbelanja di Tokopedia.", () => {
+    speakToUser("Terima Kasih, sudah berbelanja di Toko pedia.", () => {
       window.location.assign("/");
     });
 

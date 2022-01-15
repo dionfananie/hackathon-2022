@@ -53,32 +53,48 @@ code {
   background-image: url("../assets/image\ \(3\).png");
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100vw;
+  background-position: top center;
+  width: 100%;
+  max-width: 500px;
   height: 100vh;
+  display: block;
+  margin: auto;
 }
 
 .thank-you{
   background-image: url("../assets/thank-you.png");
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100vw;
+  background-position: top center;
+  width: 100%;
+  max-width: 500px;
   height: 100vh;
+  display: block;
+  margin: auto;
 }
 
 .container-checkout {
   background-image: url("../assets/image\ \(4\).png");
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100vw;
+  background-position: top center;
+  width: 100%;
+  max-width: 500px;
   height: 100vh;
+  display: block;
+  margin: auto;
 }
 
 .container-payment {
   background-image: url("../assets/image\ \(5\).png");
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100vw;
+  background-position: top center;
+  width: 100%;
+  max-width: 500px;
   height: 100vh;
+  display: block;
+  margin: auto;
 }
 
 .container-choose-payment {

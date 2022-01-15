@@ -58,6 +58,7 @@ export const micFloatingBtn = (active) => css`
   align-items: center;
   justify-content: center;
   transition: 400ms all ${timing};
+  cursor: pointer;
   ${active &&
   css`
     animation: ${pulse} 2s infinite ${timing};
